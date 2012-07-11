@@ -28,3 +28,21 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+gem 'rake', '0.8.7'
+
+group :test do
+  # gem 'rspec-rails', '2.0.0.beta.22'
+  gem 'rspec-rails', '2.0'
+  gem 'database_cleaner'
+  gem 'factory_girl', '2.6.4'
+end
+
+# gem 'devise', '1.1.3'
+# gem 'cancan'
+
+group :cucumber do
+  gem 'cucumber-rails', '1.0.6'
+  gem 'capybara'
+  gem 'email_spec'
+end
