@@ -1,4 +1,7 @@
 Codemap::Application.routes.draw do
+  root :to => "notes#index"
+  resources :notes
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
