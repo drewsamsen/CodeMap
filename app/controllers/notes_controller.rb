@@ -47,6 +47,9 @@ class NotesController < ApplicationController
 
   def find_note
     @note = Note.find(params[:id])
+    rescue  ActiveRecord::RecordNotFound
+  flash[:alert] = "The note you were looking for could not be found."
+  redirect_to notes_path
   end
 
 end
