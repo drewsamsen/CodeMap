@@ -1,5 +1,6 @@
 <% title(@note.subject) %>
 <h2><%= @note.subject %></h2>
+<p><%= @note.description %></p>
 <menu>
   <%= link_to "Edit", edit_note_path(@note) %>
   <%= link_to "Delete", @note, 
