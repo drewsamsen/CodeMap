@@ -9,3 +9,5 @@ Feature: Creating notes
     And I fill in "Subject" with "Ruby Objects"
     And I press "Create Note"
     Then I should see "Note has been created."
+    And I should be on the note page for "Ruby Objects"
+    And I should see "CodeMap | Ruby Objects"
