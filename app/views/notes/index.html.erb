@@ -1,3 +1,9 @@
 <h2>Welcome to CodeMap</h2>
 
 <%= link_to "New Note", new_note_path %>
+
+<ul>
+  <% @notes.each do |note| %>
+    <li><%= link_to note.subject, note %></li>
+  <% end %>
+</ul>
