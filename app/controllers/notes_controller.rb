@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
 
-  before_filter :find_note, :only => [:show, :edit, :update]
+  before_filter :find_note, :only => [:show, :edit, :update, :destroy]
 
   def index
     @notes = Note.all
@@ -35,6 +35,12 @@ class NotesController < ApplicationController
       flash[:alert] = "Note has not been updated."
       render :action => "edit"
     end
+  end
+
+  def destroy
+    @note.destroy
+    flash[:notice] = "Note has been deleted."
+    redirect_to notes_path
   end
 
   private
