@@ -1,6 +1,7 @@
 <h2>New Note:</h2>
 
 <%= form_for(@note) do |f| %>
+  <%= f.error_messages %>
   <p>
     <%= f.label :subject %>
     <%= f.text_field :subject %>

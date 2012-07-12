@@ -9,9 +9,13 @@ class NotesController < ApplicationController
 
   def create
     @note = Note.new(params[:note])
-    @note.save
-    flash[:notice] = "Note has been created."
-    redirect_to @note
+    if @note.save
+      flash[:notice] = "Note has been created."
+      redirect_to @note
+    else
+      flash[:alert] = "Note has not been created."
+      render :action => "new"
+    end
   end 
 
   def show
