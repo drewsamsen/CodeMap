@@ -14,6 +14,10 @@ module NavigationHelpers
     when /the note page for "(.*)"/
       note_path(Note.find_by_subject!($1))
 
+    when /^the technology page$/
+      technologies_path
+
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
