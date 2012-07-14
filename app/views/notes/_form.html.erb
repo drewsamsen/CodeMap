@@ -8,5 +8,11 @@
     <%= f.label :description %>
     <%= f.text_area :description %>
   </p>
+    <%= f.fields_for :technologies do |tech_form| %>
+      <p>
+        <%= tech_form.label :name, "Technology" %><br />
+        <%= tech_form.text_field :name %>
+      </p>
+    <% end %>
   <%= f.submit %>
 <% end %>

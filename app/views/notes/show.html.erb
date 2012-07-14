@@ -1,6 +1,11 @@
 <% title(@note.subject) %>
 <h2><%= @note.subject %></h2>
 <p><%= @note.description %></p>
+
+<% for technology in @note.technologies %>
+  <p>Technology: <%= technology.name %></p>
+<% end %>
+
 <menu>
   <%= link_to "Edit", edit_note_path(@note) %>
   <%= link_to "Delete", @note, 

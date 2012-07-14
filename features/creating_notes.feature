@@ -20,3 +20,13 @@ Feature: Creating notes
     And I press "Create Note"
     Then I should see "Note has not been created."
     Then I should see "Subject can't be blank"
+
+  Scenario: Setting the note's technology tag
+    And I fill in "Subject" with "Objects"
+    And I fill in "Description" with "omg how do they work?"
+    Then I should see "Technology"
+    And I fill in "Technology" with "Ruby"
+    And I press "Create Note"
+    Then I should see "Note has been created."
+    And I should be on the note page for "Objects"
+    And I should see "Ruby"
