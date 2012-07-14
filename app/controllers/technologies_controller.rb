@@ -1,6 +1,6 @@
 class TechnologiesController < ApplicationController
   
-before_filter :find_technology, :only => :show
+before_filter :find_technology, :only => [:show, :destroy]
 before_filter :find_notes_that_belong_to_tech, :only => :show
 
   def index
@@ -8,6 +8,12 @@ before_filter :find_notes_that_belong_to_tech, :only => :show
   end
 
   def show
+  end
+
+  def destroy
+    @technology.destroy
+    flash[:notice] = "Technology has been deleted."
+    redirect_to technologies_path
   end
 
   private

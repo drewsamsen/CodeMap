@@ -3,7 +3,7 @@ class NotesController < ApplicationController
   before_filter :find_note, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @notes = Note.all
+    @notes = Note.find(:all, :include => :technology)
   end
 
   def new

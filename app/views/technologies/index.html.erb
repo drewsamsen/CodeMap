@@ -1,7 +1,14 @@
-<h3>  <%= link_to "Home", notes_path %> > Technologies</h3>
+<h3>  <%= link_to "Home", notes_path %> > Technologies </h3>
 
 <ul class="tech_list">
   <% @technologies.each do |technology| %>
-    <li><%= link_to technology.name, technology %></li>
+    <li>
+      <%= link_to technology.name, technology %>
+      - <span class="note_count">
+          <%= technology.notes.count %>
+        </span>
+    </li>
   <% end %>
 </ul>
+
+

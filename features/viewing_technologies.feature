@@ -8,7 +8,9 @@ Feature: Viewing the list of technologies
       | subject              |
       | recursive functions  |
       | spaceship operator   |
+      | lexical scoping      |
     And the note "recursive functions" has the technology "JavaScript"
+    And the note "lexical scoping" has the technology "JavaScript"
     And the note "spaceship operator" has the technology "Ruby"
 
   Scenario: Viewing all technologies
@@ -24,6 +26,9 @@ Feature: Viewing the list of technologies
     Then I should be on the technology page for "Ruby"
     And I should see "spaceship operator"
 
+  Scenario: Easily see how many notes are belong to each technology
+    Given I am on the technology page
+    Then I should see "2" in element ".note_count"
 
 
     
