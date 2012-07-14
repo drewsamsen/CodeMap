@@ -8,16 +8,17 @@ class Note < ActiveRecord::Base
       where(:technology_id => technology)
     }
 
+  # method for helping to scope the notes by their technology
   def self.for(technology)
     Note.that_belongs_to(technology)
   end
 
-  # virtual attributes used in the creation form of new Notes
+  # virtual attribute to help get the technology name 
   def technology_name
     technology.try(:name)
   end
 
-  # virtual attribute used in the creation form of new notes
+  # virtual attribute to help set/edit the technology of a note
   def technology_name=(name)
     self.technology = Technology.find_or_create_by_name(name) if name.present?
   end

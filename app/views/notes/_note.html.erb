@@ -1,6 +1,6 @@
 <li>
   <%= link_to note.subject, note %> 
     <% if note.technology %>
-      | <%= note.technology.name %>        
+      | <%= link_to note.technology.name, technology_path(note.technology) %>
     <% end %>
 </li>

@@ -29,3 +29,9 @@ Feature: Viewing the list of technologies
   Scenario: Easily see how many notes are belong to each technology
     Given I am on the technology page
     Then I should see "2" in element ".note_count"  
+
+  Scenario: Clicking on a note's technology from note/index
+    Given I am on the home page
+    And I follow "JavaScript"
+    Then I should be on the technology page for "JavaScript"
+    And I should see "lexical scoping"
