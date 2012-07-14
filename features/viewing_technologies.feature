@@ -28,7 +28,4 @@ Feature: Viewing the list of technologies
 
   Scenario: Easily see how many notes are belong to each technology
     Given I am on the technology page
-    Then I should see "2" in element ".note_count"
-
-
-    
+    Then I should see "2" in element ".note_count"  
