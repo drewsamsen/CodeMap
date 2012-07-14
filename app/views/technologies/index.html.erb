@@ -5,7 +5,7 @@
     <li>
       <%= link_to technology.name, technology %>
       - <span class="note_count">
-          <%= technology.notes.count %>
+          <%= pluralize technology.notes.size, 'note' %>
         </span>
     </li>
   <% end %>

@@ -1,5 +1,5 @@
 class Note < ActiveRecord::Base
-  belongs_to :technology
+  belongs_to :technology, :counter_cache => true
 
   validates :subject, :presence => true
   
