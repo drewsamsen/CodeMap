@@ -1,0 +1,9 @@
+<% title(@technology.name) %>
+<h3 class="tech_title">
+  <%= link_to "Home", notes_path %> > 
+  <%= link_to "Technologies", technologies_path %> > <%= @technology.name %>
+</h3>
+
+<ul>
+  <%= render @notes, :template => 'notes/_note.html.erb' %>
+</ul>

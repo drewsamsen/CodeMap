@@ -4,8 +4,26 @@ Feature: Viewing the list of technologies
   In order to see a list of technologies
 
   Background: Viewing all technologies
-    Given there is a technology called "Ruby"
-    And there is a technology called "JavaScript"
-    And I am on the technology page
+    Given there are the following notes:
+      | subject              |
+      | recursive functions  |
+      | spaceship operator   |
+    And the note "recursive functions" has the technology "JavaScript"
+    And the note "spaceship operator" has the technology "Ruby"
+
+  Scenario: Viewing all technologies
+    Given I am on the homepage
+    And I follow "Technologies"
+    Then I should be on the technology page
     Then I should see "Ruby" in element ".tech_list"
     And I should see "JavaScript" in element ".tech_list"
+
+  Scenario: Viewing all notes under a selected technology
+    Given I am on the technology page
+    And I follow "Ruby"
+    Then I should be on the technology page for "Ruby"
+    And I should see "spaceship operator"
+
+
+
+    

@@ -17,6 +17,8 @@ module NavigationHelpers
     when /^the technology page$/
       technologies_path
 
+    when /the technology page for "(.*)"/
+      technology_path(Technology.find_by_name!($1))
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

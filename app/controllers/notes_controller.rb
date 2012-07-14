@@ -8,7 +8,6 @@ class NotesController < ApplicationController
 
   def new
     @note = Note.new
-    @note.technologies.build
   end 
 
   def create

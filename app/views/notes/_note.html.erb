@@ -1,0 +1,6 @@
+<li>
+  <%= link_to note.subject, note %> 
+    <% if note.technology %>
+      | Tech: <%= note.technology.name %>        
+    <% end %>
+</li>

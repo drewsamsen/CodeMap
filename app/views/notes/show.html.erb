@@ -3,11 +3,9 @@
 
 <p><%= @note.description %></p>
 
-<p>
-  <% for technology in @note.technologies %>
-    <span class="technology">Technology: <%= technology.name %></span>
-  <% end %>
-</p>
+<% if @note.technology %>
+  <p>Technology: <%= @note.technology.name %></p>
+<% end %>
 
 <menu>
   <%= link_to "Edit", edit_note_path(@note) %>
