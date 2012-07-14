@@ -1,14 +1,18 @@
 <% title(@note.subject) %>
-<h2><%= @note.subject %></h2>
+<h3><%= @note.subject %></h3>
+
 <p><%= @note.description %></p>
 
-<% for technology in @note.technologies %>
-  <p>Technology: <%= technology.name %></p>
-<% end %>
+<p>
+  <% for technology in @note.technologies %>
+    <span class="technology">Technology: <%= technology.name %></span>
+  <% end %>
+</p>
 
 <menu>
   <%= link_to "Edit", edit_note_path(@note) %>
   <%= link_to "Delete", @note, 
       :method => :delete,
       :confirm => "Are you sure you want to delete this note?" %>
+  <%= link_to "CodeMap Home", notes_path %>
 </menu>

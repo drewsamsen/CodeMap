@@ -4,6 +4,10 @@
 
 <ul>
   <% @notes.each do |note| %>
-    <li><%= link_to note.subject, note %></li>
+    <li><%= link_to note.subject, note %>&nbsp;
+        <% for technology in note.technologies %>
+          <span class="technology">| <%= technology.name %></span>
+        <% end %>
+    </li>
   <% end %>
 </ul>

@@ -13,7 +13,7 @@ Feature: Creating notes
     And I press "Create Note"
     Then I should see "Note has been created."
     And I should be on the note page for "Ruby Objects"
-    And I should see "CodeMap | Ruby Objects"
+    And I should see "Ruby Objects"
     And I should see "omg how do they work?"
 
   Scenario: Subject can't be blank

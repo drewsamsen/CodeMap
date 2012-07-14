@@ -31,6 +31,8 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 
 gem 'rake', '0.8.7'
 
+gem "nifty-generators", :group => :development
+
 group :test do
   # gem 'rspec-rails', '2.0.0.beta.22'
   gem 'rspec-rails', '2.0'
