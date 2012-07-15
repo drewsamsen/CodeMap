@@ -48,3 +48,7 @@ group :cucumber do
   gem 'capybara'
   gem 'email_spec'
 end
+
+gem 'sass-rails',   '~> 3.1.4'
+gem 'coffee-rails', '~> 3.1.1'
+gem 'jquery-rails'
