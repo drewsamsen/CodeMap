@@ -73,6 +73,25 @@ a {
 .error_messages ul {
   margin: 0;
 }
+menu {
+  padding: 0 0 8px 0;
+  margin-bottom: 6px;
+  float: right;
+}
+  menu a {
+    color: #777;
+    font-size: 11px;
+    line-height: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1px 5px;
+  }
+    menu a:hover {
+      position: relative;
+      top: 1px;
+      background: #f0f0f0;
+      border-top: 1px solid #f0f0f0;
+    }
 
 /* FOR AUTOCOMPLETE STUFF */
 ul.ui-autocomplete {
@@ -96,4 +115,39 @@ ul.ui-autocomplete {
       background-color: #FFFCB2;
     }
   }
+}
+
+/* styling for the markdown box, @note.description */
+.CodeRay {
+  padding: 0 20px 0 0;
+}
+  .CodeRay .code {
+    padding: 0 0 0 10px;
+  }
+pre {
+  background: #f0f0f0;
+}
+.line-numbers { 
+  background: #ebebeb;
+}
+  .line-numbers a {
+    text-decoration: none;
+    color: #b8c2d0; 
+    padding: 0 8px;
+    text-align: center;
+  }
+  .line-numbers pre {
+    background: none;
+  }
+tr.code pre {
+  background: #f0f0f0;
+}
+
+/* show note styling */
+.note_subject {
+  border-bottom: 1px solid #e1e1e1;
+  padding: 0 0 10px 0;
+  font-weight: bold;
+  clear: both;
+  margin-top: 0;
 }
