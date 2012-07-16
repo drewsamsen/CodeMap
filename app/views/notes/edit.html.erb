@@ -1,2 +1,4 @@
-<h2>Edit Note:</h2>
+<h3>
+  <%= link_to "Home", notes_path %> >
+  <%= link_to @note.subject, note_path(@note) %> > Edit Note:</h3>
 <%= render "form" %>

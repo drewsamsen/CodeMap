@@ -29,19 +29,15 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 #   gem 'webrat'
 # end
 
-gem 'rake', '0.8.7'
+gem 'rake'
 
 gem "nifty-generators", :group => :development
 
 group :test do
-  # gem 'rspec-rails', '2.0.0.beta.22'
   gem 'rspec-rails', '2.0'
   gem 'database_cleaner'
   gem 'factory_girl', '2.6.4'
 end
-
-# gem 'devise', '1.1.3'
-# gem 'cancan'
 
 group :cucumber do
   gem 'cucumber-rails', '1.0.6'
@@ -52,3 +48,9 @@ end
 gem 'sass-rails',   '~> 3.1.4'
 gem 'coffee-rails', '~> 3.1.1'
 gem 'jquery-rails'
+
+# the following are for markdown and syntax highlighting
+# the methods are in application_helper
+gem 'redcarpet'
+gem 'nokogiri'
+gem 'coderay'

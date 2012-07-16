@@ -10,7 +10,7 @@
   </p>
   <p>
     <%= f.label :technology_name %><br />
-    <%= f.text_field :technology_name %>
+    <%= f.collection_select :technology_name, Technology.find(:all), :name, :name %>
   </p>
 
   <%= f.submit %>
