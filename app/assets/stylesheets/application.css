@@ -151,3 +151,32 @@ tr.code pre {
   clear: both;
   margin-top: 0;
 }
+
+/* index styles */
+.notes_list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  clear: both;
+}
+  .notes_list li {
+    padding: 8px;
+    border-bottom: 1px solid #e1e1e1;
+    position: relative;
+  }
+    .notes_list li a {
+      text-decoration: none;
+    }
+    .notes_list a.technology {
+      font-size: 11px;
+      background: #dbe3eb;
+      color: #4b7399;
+      display: block;
+      text-align: center;
+      width: 110px;
+      line-height: 20px;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      margin-top: -10px;
+    }

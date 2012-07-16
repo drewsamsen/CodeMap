@@ -1,12 +1,16 @@
-<h3 class="tech_title">
-  <%= link_to "Home", notes_path %> > 
-  <%= link_to "Technologies", technologies_path %> > <%= @technology.name %>
-</h3>
+<menu>
+  <%= link_to "Home", notes_path %> 
+  <%= link_to "All Technologies", technologies_path %>
+  <%= link_to "[x]", @technology, 
+      :method => :delete,
+      :confirm => "Are you sure you want to delete this technology?",
+      :title => "Delete" %>
+</menu>
 
-<ul>
+<h4><%= @technology.name %> Notes</h4>
+
+<ul class="notes_list">
   <%= render @notes, :template => 'notes/_note.html.erb' %>
 </ul>
 
-<%= link_to "Delete", @technology, 
-      :method => :delete,
-      :confirm => "Are you sure you want to delete this technology?" %>
+

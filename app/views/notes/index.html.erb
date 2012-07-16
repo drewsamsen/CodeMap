@@ -1,12 +1,11 @@
-<h2>Welcome to CodeMap</h2>
-
-
-
-<ul class="technology">
-  <%= render @notes %>
-</ul>
-
 <menu>
   <%= link_to "New Note", new_note_path %>
   <%= link_to "Technologies", technologies_path %>
 </menu>
+
+<h2>Welcome to CodeMap</h2>
+
+<ul class="notes_list">
+  <%= render @notes %>
+</ul>
+
