@@ -255,7 +255,3 @@ tr.code pre {
   font-size: 14px;
   margin-bottom: 40px;
 }
-#form label {
-  position: absolute;
-  left: -1000px;
-}

@@ -10,12 +10,12 @@ Feature: Editing notes
     And I follow "Edit"
 
   Scenario: Updating a note
-    And I fill in "Subject" with "Ruby Object structure"
+    And I fill in "note_subject" with "Ruby Object structure"
     And I press "Update Note"
     Then I should see "Note has been updated."
     And I should be on the note page for "Ruby Object structure"
 
   Scenario: Updating a note with invalide subject
-    And I fill in "Subject" with ""
+    And I fill in "note_subject" with ""
     And I press "Update Note"
     Then I should see "Note has not been updated."

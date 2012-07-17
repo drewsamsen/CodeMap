@@ -3,7 +3,11 @@ class NotesController < ApplicationController
   before_filter :find_note, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @notes = Note.find(:all, :include => :technology)
+    if params[:search]
+      @notes = Note.where("subject like ?", "%#{params[:search]}%")
+    else
+      @notes = Note.find(:all, :include => :technology)
+  end
   end
 
   def new

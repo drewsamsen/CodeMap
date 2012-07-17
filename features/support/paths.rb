@@ -9,7 +9,7 @@ module NavigationHelpers
     case page_name
 
     when /^the home\s?page$/
-      '/'
+      home_path
 
     when /the note page for "(.*)"/
       note_path(Note.find_by_subject!($1))
