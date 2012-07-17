@@ -1,15 +1,18 @@
 module ApplicationHelper
 
-  def title(*parts)
-    @title = ("CodeMap".to_a << parts).join(" | ") unless parts.empty?
-    @title || "CodeMap"
+  def trim(string, length)
+    truncate(string, :length => length, :omission => '... ', :separator => ' ')
+  end
+
+  def set_title(title)    
+    @title =  trim(title, 40) + "| CodeMap" unless title.empty?
+    content_for :title do @title || "CodeMap" end
   end  
 
   def markdown(text)
     # set up our Redcarpet options. Details can be found at
     # http://rdoc.info/github/tanoku/redcarpet/
     options = {
-      :no_links => true,
       :hard_wrap => true,
       :filter_html => true
       }

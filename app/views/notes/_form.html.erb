@@ -1,17 +1,21 @@
 <%= form_for(@note) do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :subject %><br/>
-    <%= f.text_field :subject %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description, :size => "24x6" %>
-  </p>
-  <p>
-    <%= f.label :technology_name %><br />
-    <%= f.collection_select :technology_name, Technology.find(:all), :name, :name %>
-  </p>
+  
+  <%= f.label :subject %>
+  <%= f.text_field :subject, :placeholder => "Subject" %>
+  
+  <%= f.label :description %>
+  <%= f.text_area :description, 
+                  :size => "24x6", 
+                  :placeholder => "Description" %>
+
+  <%= f.label :resources %>
+  <%= f.text_area :resources, 
+                  :size => "24x1",
+                  :placeholder => "Resources" %>
+
+  <%= f.label :technology_name %>
+  <%= f.collection_select :technology_name, Technology.find(:all), :name, :name %>  
 
   <%= f.submit %>
 <% end %>

@@ -1,4 +1,11 @@
-<h3>
-  <%= link_to "Home", notes_path %> >
-  <%= link_to @note.subject, note_path(@note) %> > Edit Note:</h3>
-<%= render "form" %>
+<menu>
+  <%= link_to "Home", home_path %>
+</menu>
+
+<p class="note_subject">&nbsp;</p>
+
+<% content_for :page do %>
+  <div id="form">
+    <%= render "form" %>
+  </div>
+<% end %>

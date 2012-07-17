@@ -10,11 +10,13 @@ Feature: Creating notes
   Scenario: Creating a note
     And I fill in "Subject" with "Ruby Objects"
     And I fill in "Description" with "omg how do they work?"
+    And I fill in "Resources" with "Rails 3 in Action"
     And I press "Create Note"
     Then I should see "Note has been created."
     And I should be on the note page for "Ruby Objects"
     And I should see "Ruby Objects"
     And I should see "omg how do they work?"
+    And I should see "Rails 3 in Action"
 
   Scenario: Subject can't be blank
     And I press "Create Note"
