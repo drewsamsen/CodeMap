@@ -23,7 +23,7 @@ before_filter :find_notes_that_belong_to_tech, :only => :show
   end
 
   def find_notes_that_belong_to_tech
-    @notes = Note.for(@technology.id)
+     @notes = Note.where(:technology_id => @technology.id)
   end
 
 end
