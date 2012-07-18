@@ -23,6 +23,21 @@ class Note < ActiveRecord::Base
     self.technology = Technology.find_or_create_by_name(name) if name.present?
   end
 
-  
+  def self.search(params)
+    # this class method is used for the notes#index action
+    # FIRST we check to see if the user has used the search form
+    if params[:search]
+      @notes = Note.where("subject like ?", "%#{params[:search]}%")
+
+    # SECOND: if not, see if they're trying to filter notes by technology
+    elsif params[:note] || params[:technology]
+      tech_id = params[:note] ? params[:note][:technology_id] : params[:technology]
+      @notes = Note.where("technology_id = ?", tech_id) 
+
+    # THIRD: if they're not searching, return a normal collection of notes
+    else
+      @notes = Note.find(:all, :include => :technology)
+    end
+  end 
 
 end

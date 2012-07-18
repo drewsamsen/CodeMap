@@ -23,7 +23,7 @@ Feature: Viewing the list of technologies
   Scenario: Viewing all notes under a selected technology
     Given I am on the technology page
     And I follow "Ruby"
-    Then I should be on the technology page for "Ruby"
+    Then I should be on the homepage
     And I should see "spaceship operator"
 
   Scenario: Easily see how many notes are belong to each technology
@@ -33,5 +33,5 @@ Feature: Viewing the list of technologies
   Scenario: Clicking on a note's technology from note/index
     Given I am on the home page
     And I follow "JavaScript"
-    Then I should be on the technology page for "JavaScript"
+    Then I should be on the homepage
     And I should see "lexical scoping"

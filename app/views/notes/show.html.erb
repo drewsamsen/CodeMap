@@ -30,7 +30,11 @@
 
   <% if @note.technology %>
     <div class="note_technology section">
-      <h5>Technology: <%= link_to @note.technology.name, technology_path(@note.technology) %>
+      <h5>Technology: <%= link_to @note.technology.name, 
+              home_path(:technology => @note.technology.id), 
+              :method => :get,
+              :class => "technology",
+              :title => "More #{@note.technology.name} Notes" %>
       </h5>
     </div>
   <% end %>

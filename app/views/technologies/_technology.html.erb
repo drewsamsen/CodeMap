@@ -1,5 +1,9 @@
 <li>
-  <%= link_to technology.name, technology %>
+  <%= link_to technology.name, 
+              home_path(:technology => technology.id), 
+              :method => :get,
+              :class => "technology",
+              :title => "More #{technology.name} Notes" %>
   - <span class="note_count">
       <%= pluralize technology.notes.size, 'note' %>
     </span>
