@@ -18,14 +18,13 @@ before_filter :find_technology, :only => [:destroy]
   end 
 
   def destroy
-    notes = Note.where("technology_id = ?", @technology.id)
-    if notes.empty?
+    if has_children?
+      flash[:alert] = "Cannot delete non-empty technology categories."
+      redirect_to technologies_path      
+    else
       @technology.destroy
       flash[:notice] = "Technology has been deleted."
       redirect_to technologies_path  
-    else
-      flash[:alert] = "Cannot delete non-empty technology categories"
-      redirect_to technologies_path    
     end
   end
 
@@ -33,6 +32,11 @@ before_filter :find_technology, :only => [:destroy]
 
   def find_technology
     @technology = Technology.find(params[:id])
+  end
+
+  def has_children?
+    notes = Note.where("technology_id = ?", @technology.id)
+    !notes.empty?
   end
 
 

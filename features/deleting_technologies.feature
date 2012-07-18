@@ -23,7 +23,7 @@ Feature: Deleting Technologies
 
   Scenario: Cannot delete a non-empty technology
     And I follow "DeleteJavaScript"
-    Then I should see "Cannot delete non-empty technology categories"
+    Then I should see "Cannot delete non-empty technology categories."
     Given I follow "JavaScript"
     Then I should see "recursive functions"
     Given I follow "recursive functions"
