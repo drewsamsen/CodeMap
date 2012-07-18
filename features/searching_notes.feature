@@ -16,14 +16,14 @@ Feature: Search!
 
   Scenario: Searching by note subject should filter index results
     Given I fill in "search" with "Functions"
-    And I press "Search"
+    When I press "Search"
     Then I should be on the homepage
     And I should see "recursive functions"
     But I should not see "spaceship operator"
 
   Scenario: Searching by technology should filter by technology type
     Given I select "Ruby" from "note_technology_id"
-    And I press "Filter"
+    When I press "Filter"
     Then I should be on the homepage
     And I should see "spaceship operator"
     But I should not see "recursive functions" 

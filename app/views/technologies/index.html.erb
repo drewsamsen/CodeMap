@@ -1,4 +1,12 @@
-<h3>  <%= link_to "Home", home_path %> > Technologies </h3>
+<menu>
+  <%= link_to "Home", home_path %>
+  <%= link_to "New Note", new_note_path %>
+</menu>
+
+<%= form_tag technologies_path do %>
+  <%= text_field_tag :name %>
+  <%= submit_tag "Add" %>
+<% end %>
 
 <ul class="tech_list">
   <%= render @technologies %>

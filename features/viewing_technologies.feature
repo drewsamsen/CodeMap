@@ -15,14 +15,14 @@ Feature: Viewing the list of technologies
 
   Scenario: Viewing all technologies
     Given I am on the homepage
-    And I follow "Technologies"
+    When I follow "Technologies"
     Then I should be on the technology page
-    Then I should see "Ruby" in element ".tech_list"
+    And I should see "Ruby" in element ".tech_list"
     And I should see "JavaScript" in element ".tech_list"
 
   Scenario: Viewing all notes under a selected technology
     Given I am on the technology page
-    And I follow "Ruby"
+    When I follow "Ruby"
     Then I should be on the homepage
     And I should see "spaceship operator"
 
@@ -32,6 +32,6 @@ Feature: Viewing the list of technologies
 
   Scenario: Clicking on a note's technology from note/index
     Given I am on the home page
-    And I follow "JavaScript"
+    When I follow "JavaScript"
     Then I should be on the homepage
     And I should see "lexical scoping"
