@@ -40,7 +40,7 @@ class NotesController < ApplicationController
   def destroy
     @note.destroy
     flash[:notice] = "Note has been deleted."
-    redirect_to home_path
+    redirect_to root_path
   end
 
   private
@@ -49,7 +49,7 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
     rescue  ActiveRecord::RecordNotFound
   flash[:alert] = "The note you were looking for could not be found."
-  redirect_to home_path
+  redirect_to root_path
   end
 
 end

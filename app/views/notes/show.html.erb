@@ -1,6 +1,6 @@
 <% set_title(@note.subject) %>
 <menu>
-  <%= link_to "Home", home_path %>
+  <%= link_to "Home", root_path %>
   <%= link_to "Edit", edit_note_path(@note) %>
   <%= link_to "[x]", @note, 
       :method => :delete,
@@ -31,7 +31,7 @@
   <% if @note.technology %>
     <div class="note_technology section">
       <h5>Technology: <%= link_to @note.technology.name, 
-              home_path(:technology => @note.technology.id), 
+              root_path(:technology => @note.technology.id), 
               :method => :get,
               :class => "technology",
               :title => "More #{@note.technology.name} Notes" %>

@@ -2,7 +2,7 @@
   <%= link_to trim(note.subject, 70), note, :class => "subject" %> 
     <% if note.technology %>   
       <%= link_to note.technology.name, 
-              home_path(:technology => note.technology.id), 
+              root_path(:technology => note.technology.id), 
               :method => :get,
               :class => "technology",
               :title => "More #{note.technology.name} Notes" %>

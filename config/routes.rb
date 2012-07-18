@@ -1,8 +1,6 @@
 Codemap::Application.routes.draw do
   root :to => "notes#index"
-  match "home" => "notes#index"
-  resources :notes
-  resources :technologies
+  resources :notes, :technologies
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
