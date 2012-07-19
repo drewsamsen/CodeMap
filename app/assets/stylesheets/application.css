@@ -245,8 +245,13 @@ tr.code pre {
 }
 #form #note_importance {
   position: absolute;
-  left: 594px;
+  right: 40px;
   top: 260px;
+}
+#form #note_understanding {
+  position: absolute;
+  right: 40px;
+  top: 295px;
 }
 #form #note_technology_name {
   position: absolute;
@@ -260,13 +265,15 @@ tr.code pre {
   font-size: 14px;
   margin-bottom: 40px;
 }
-#sidebar .note_importance span {
-  padding: 4px 9px;
+#sidebar .radios span {
+  padding: 4px 7px;
   border: 1px dotted #e1e1e1;
   position: relative;
-  top: 2px;
+  top: -3px;
   left: 2px;
+  float: right;
+  margin: 0 2px;
 }
-  #sidebar .note_importance .importance_value {
+  #sidebar .section .importance_value, #sidebar .section .understanding_value {
     background: #e1e1e1;
   }

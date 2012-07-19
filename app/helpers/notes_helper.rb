@@ -38,4 +38,15 @@ module NotesHelper
     end
     doc.to_s
   end
+
+  def urgency(importance, understanding)
+    # set up my parameters
+    log_multiplier = 3
+    log_base = 3
+    scaler = 2.5
+    smoother = 8
+
+    log_piece = Log(4)
+  end
+
 end

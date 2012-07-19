@@ -24,9 +24,25 @@
     </div>
   <% end %>
 
-  <div class="section">
-    <h5>Associated:</h5>
-  </div>
+  <% if @note.importance %>
+    <div class="note_importance radios section">
+      <h5>Importance: 
+        <% 5.downto(1) do |num| %>
+          <span <%= "class=importance_value" if num == @note.importance %>><%= num %></span>
+         <% end %>
+      </h5>
+    </div>
+  <% end %>
+
+  <% if @note.understanding %>
+    <div class="note_understanding radios section">
+      <h5>Understanding: 
+        <% 5.downto(1) do |num| %>
+          <span <%= "class=understanding_value" if num == @note.understanding %>><%= num %></span>
+         <% end %>
+      </h5>
+    </div>
+  <% end %>
 
   <% if @note.technology %>
     <div class="note_technology section">
@@ -39,15 +55,6 @@
     </div>
   <% end %>
 
-  <% if @note.importance %>
-    <div class="note_importance section">
-      <h5>Importance: 
-        <% [1,2,3,4,5].each do |num| %>
-          <span <%= "class=importance_value" if num == @note.importance %>><%= num %></span>
-         <% end %>
-      </h5>
-    </div>
-  <% end %>
+
 
 <% end %>
-
