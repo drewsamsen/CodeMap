@@ -14,6 +14,7 @@ Feature: Creating notes
     And I fill in "note_description" with "omg how do they work?"
     And I fill in "note_resources" with "Rails 3 in Action"
     And I select "Ruby" from "note_technology_name" 
+    And I choose "note_importance_5"
     When I press "Create Note"
     Then I should see "Note has been created."
     And I should be on the note page for "Ruby Objects"
@@ -21,6 +22,7 @@ Feature: Creating notes
     And I should see "omg how do they work?"
     And I should see "Rails 3 in Action"
     And I should see "Ruby" in element ".note_technology"
+    And I should see "5" in element ".importance_value"
 
   Scenario: Subject can't be blank
     When I press "Create Note"

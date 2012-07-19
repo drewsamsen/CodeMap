@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120717001235) do
+ActiveRecord::Schema.define(:version => 20120719012436) do
 
   create_table "notes", :force => true do |t|
     t.string   "subject"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20120717001235) do
     t.text     "description"
     t.integer  "technology_id"
     t.text     "resources"
+    t.integer  "importance"
   end
 
   create_table "technologies", :force => true do |t|

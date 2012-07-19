@@ -39,5 +39,15 @@
     </div>
   <% end %>
 
+  <% if @note.importance %>
+    <div class="note_importance section">
+      <h5>Importance: 
+        <% [1,2,3,4,5].each do |num| %>
+          <span <%= "class=importance_value" if num == @note.importance %>><%= num %></span>
+         <% end %>
+      </h5>
+    </div>
+  <% end %>
+
 <% end %>
 

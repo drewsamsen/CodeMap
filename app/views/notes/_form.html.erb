@@ -13,5 +13,14 @@
 
   <%= f.collection_select :technology_name, Technology.find(:all), :name, :name %>  
 
+  <div id="note_importance">
+    Importance: 
+    <%= f.radio_button :importance, "1" %>
+    <%= f.radio_button :importance, "2" %>
+    <%= f.radio_button :importance, "3" %>
+    <%= f.radio_button :importance, "4" %>
+    <%= f.radio_button :importance, "5" %>
+  </div>
+
   <%= f.submit %>
 <% end %>
