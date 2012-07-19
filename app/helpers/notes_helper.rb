@@ -40,13 +40,18 @@ module NotesHelper
   end
 
   def urgency(importance, understanding)
-    # set up my parameters
-    log_multiplier = 3
-    log_base = 3
-    scaler = 2.5
-    smoother = 8
+    # set up my constants
+    importance_factor = 0.5
+    understanding_factor = 2
+    scaler = 12.5
 
-    log_piece = Log(4)
+    importance_component = log(importance + importance_factor) * scaler
+    understanding_component = log((6 - understanding) + understanding_factor) * scaler
+    # result is the two multiplied
+    (importance_component * understanding_component).floor
   end
 
+  def log(number)
+    Math.log10(number)
+  end
 end

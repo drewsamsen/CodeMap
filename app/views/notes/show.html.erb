@@ -55,6 +55,11 @@
     </div>
   <% end %>
 
-
+  <% if @note.importance && @note.understanding %>
+    <div class="section">
+      <h5>Urgency Factor: <%= urgency(@note.importance,@note.understanding) %>/100</h5>
+    </div>
+  <% end %>
+ 
 
 <% end %>
