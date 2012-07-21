@@ -4,6 +4,10 @@ Feature: Editing notes
   In order to update my learing progress
 
   Background:
+    Given there are the following users:
+      | email             | password |
+      | admin@codemap.com | password |
+    And I am signed in as "admin@codemap.com"
     Given there is a note called "Ruby Objects"
     And I am on the homepage
     When I follow "Ruby Objects"

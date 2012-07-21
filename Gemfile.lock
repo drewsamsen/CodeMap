@@ -31,6 +31,7 @@ GEM
       multi_json (~> 1.0)
     addressable (2.2.8)
     arel (2.2.3)
+    bcrypt-ruby (3.0.1-x86-mingw32)
     builder (3.0.0)
     capybara (1.1.2)
       mime-types (>= 1.16)
@@ -160,6 +161,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  bcrypt-ruby (~> 3.0.0)
   capybara
   coderay
   coffee-rails (~> 3.1.1)

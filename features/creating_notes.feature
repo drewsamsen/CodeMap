@@ -4,10 +4,14 @@ Feature: Creating notes
   In order to record and track what I learn
 
   Background: 
+    Given there are the following users:
+      | email             | password |
+      | admin@codemap.com | password |
+    And I am signed in as "admin@codemap.com"
     Given I am on the homepage
     # must seed now for later scenario
     And the technology "Ruby" exists
-    When I follow "New Note"
+    And I follow "New Note"    
 
   Scenario: Creating a note
     And I fill in "note_subject" with "Ruby Objects"

@@ -4,6 +4,10 @@ Feature: Deleting Technologies
   In order to remove unneeded technologies
 
   Background:
+    Given there are the following users:
+      | email             | password |
+      | admin@codemap.com | password |
+    And I am signed in as "admin@codemap.com"
     Given there are the following notes:
       | subject              |
       | recursive functions  |

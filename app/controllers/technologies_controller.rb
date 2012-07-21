@@ -1,6 +1,7 @@
 class TechnologiesController < ApplicationController
 
-before_filter :find_technology, :only => [:destroy]
+  before_filter :authorize, :except => [:index]
+  before_filter :find_technology, :only => [:destroy]
 
   def index
     @technologies = Technology.all

@@ -1,5 +1,6 @@
 class NotesController < ApplicationController
 
+  before_filter :authorize, :except => [:index, :show]
   before_filter :find_note, :only => [:show, :edit, :update, :destroy]
 
   def index

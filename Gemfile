@@ -29,6 +29,8 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 #   gem 'webrat'
 # end
 
+gem 'bcrypt-ruby', '~> 3.0.0'
+
 gem 'rake'
 
 gem "nifty-generators", :group => :development

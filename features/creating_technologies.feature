@@ -4,6 +4,10 @@ Feature: Creating Technologies
   In order to have additional technologies to match with my notes
 
   Background:
+    Given there are the following users:
+      | email             | password |
+      | admin@codemap.com | password |
+    And I am signed in as "admin@codemap.com"
     Given I am on the homepage
     And the technology "Ruby" exists
     When I follow "Technologies"
