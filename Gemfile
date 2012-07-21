@@ -42,7 +42,7 @@ group :test do
 end
 
 group :cucumber do
-  gem 'cucumber-rails', '1.0.6'
+  gem 'cucumber-rails'
   gem 'capybara'
   gem 'email_spec'
 end
