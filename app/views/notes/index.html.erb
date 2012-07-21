@@ -1,8 +1,8 @@
 <menu>
-  <%= link_to "Home", root_path %>
-  <%= link_to "New Note", new_note_path %>
+  <%= link_to "Home", root_path %>  
   <%= link_to "Technologies", technologies_path %>
   <% if current_user %>
+    <%= link_to "New Note", new_note_path %>
     <%= link_to "Log Out", logout_path %>
   <% else %>
     <%= link_to "Sign Up", signup_path %>

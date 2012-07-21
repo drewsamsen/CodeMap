@@ -1,11 +1,15 @@
 <% set_title(@note.subject) %>
 <menu>
   <%= link_to "Home", root_path %>
-  <%= link_to "Edit", edit_note_path(@note) %>
-  <%= link_to "[x]", @note, 
-      :method => :delete,
-      :confirm => "Are you sure you want to delete this note?", 
-      :title => "Delete" %>
+  <% if current_user %>
+    <%= link_to "Edit", edit_note_path(@note) %>
+    <%= link_to "[x]", @note, 
+        :method => :delete,
+        :confirm => "Are you sure you want to delete this note?", 
+        :title => "Delete" %>
+  <% else %>
+    <%= link_to "Log In", login_path %>
+  <% end %>
 </menu>
 
 <p class="note_subject"><%= @note.subject %></p>
