@@ -11,7 +11,7 @@
                   :size => "24x1",
                   :placeholder => "Resources" %>
 
-  <%= f.collection_select :technology_name, Technology.find(:all), :name, :name %>  
+   <%= f.text_field :technology_name, data: {autocomplete_source: Technology.order(:name).map(&:name)} %>    
 
   <div id="note_importance">
     Importance: 
