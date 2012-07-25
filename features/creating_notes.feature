@@ -17,7 +17,7 @@ Feature: Creating notes
     And I fill in "note_subject" with "Ruby Objects"
     And I fill in "note_description" with "omg how do they work?"
     And I fill in "note_resources" with "Rails 3 in Action"
-    And I select "Ruby" from "note_technology_name" 
+    And I fill in "note_technology_name" with "Ruby"
     And I choose "note_importance_5"
     And I choose "note_understanding_3"
     When I press "Create Note"
