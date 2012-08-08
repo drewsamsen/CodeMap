@@ -2,7 +2,7 @@ Codemap::Application.routes.draw do
 
   root :to => "notes#index"
 
-  match 'signup' => 'users#new', :as => :signup, :via => :get
+  # match 'signup' => 'users#new', :as => :signup, :via => :get
   match 'login' => 'sessions#new', :as => :login, :via => :get
   match 'logout' => 'sessions#destroy', :as => :logout, :via => :get
 

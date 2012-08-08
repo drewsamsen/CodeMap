@@ -3,16 +3,16 @@ Feature: Authentication
   I want to log in
   In order to be able to perform create, edit and destroy actions
 
-  Scenario: Signing Up
-    Given I am on the homepage
-    When I follow "Sign Up"
-    And I fill in "Email" with "admin@codemap.com"
-    And I fill in "Password" with "password"
-    And I fill in "Password confirmation" with "password"
-    When I press "Sign Up"
-    Then I should see "Successfully signed up!"
-    And I should be on the homepage
-    And I should see "Log Out"
+  #Scenario: Signing Up
+  #  Given I am on the homepage
+  #  When I follow "Sign Up"
+  #  And I fill in "Email" with "admin@codemap.com"
+  #  And I fill in "Password" with "password"
+  #  And I fill in "Password confirmation" with "password"
+  #  When I press "Sign Up"
+  #  Then I should see "Successfully signed up!"
+  #  And I should be on the homepage
+  #  And I should see "Log Out"
 
   Scenario: Logging in as an existing user
     Given there are the following users:
