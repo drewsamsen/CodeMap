@@ -57,3 +57,7 @@ gem 'jquery-rails'
 gem 'redcarpet'
 gem 'nokogiri'
 gem 'coderay'
+
+group :production do
+	gem 'uglifier' # asset compression requires a JS compressor
+end
