@@ -60,4 +60,5 @@ gem 'coderay'
 
 group :production do
 	gem 'uglifier' # asset compression requires a JS compressor
+	gem 'thin' # more robust webserver for production on Heroku
 end
