@@ -21,6 +21,17 @@ class Note < ActiveRecord::Base
     self.technology = Technology.find_or_create_by_name(name) if name.present?
   end
 
+  def self.search(params)
+    if params[:search]
+      where("subject like ?", "%#{params[:search]}%")
+    elsif params[:note] || params[:technology]
+      tech_id = params[:note] ? params[:note][:technology_id] : params[:technology]
+      @notes = Note.where("technology_id = ?", tech_id) 
+    else
+      scoped
+    end
+  end
+
   def update_mastery(note)
     note.mastery = calculate_mastery(note.importance, note.understanding)
   end

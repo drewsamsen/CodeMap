@@ -5,14 +5,7 @@ class NotesController < ApplicationController
   before_filter :find_note, :only => [:show, :edit, :update, :destroy]
 
   def index
-    if params[:search]
-      @notes = Note.where("subject like ?", "%#{params[:search]}%")
-    elsif params[:note] || params[:technology]
-      tech_id = params[:note] ? params[:note][:technology_id] : params[:technology]
-      @notes = Note.where("technology_id = ?", tech_id) 
-    else
-      @notes = Note.order(sort_column + " " + sort_direction)
-    end
+    @notes = Note.search(params).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
   end
 
   def new
