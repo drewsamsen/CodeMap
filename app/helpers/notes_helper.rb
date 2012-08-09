@@ -40,10 +40,15 @@ module NotesHelper
   end
 
   def mastery_bar_width_max(note)
-    (note.importance + 3) * 10
+    # (note.importance + 3) * 10
+    100
   end
 
   def mastery_bar_width(note)
-    mastery_bar_width_max(note) * note.understanding / 5
+    if note.understanding == 5
+      100
+    else
+      100 - ((5 - note.understanding) * 14) - note.importance * 6
+    end
   end
 end

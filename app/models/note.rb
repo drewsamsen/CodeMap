@@ -43,16 +43,17 @@ class Note < ActiveRecord::Base
   end 
 
   def update_mastery(note)
-    note.mastery = set_mastery(note.importance, note.understanding)
+    note.mastery = calculate_mastery(note.importance, note.understanding)
   end
 
   # mastery is a virtual attribute that is a measure of how urgently I should
   # think about learning more about a given note. Notes with high importance and
   # low understanding will have an mastery closer to zero.
-  def set_mastery(importance, understanding)
-    # set up my constants
-    importance_factor = 2
-    # return result
-    103 - (importance * importance_factor) * (6 - understanding) * 2
+  def calculate_mastery(importance, understanding)
+    if understanding == 5
+      100
+    else
+      100 - ((5 - understanding) * 14) - importance * 6
+    end
   end
 end

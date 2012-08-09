@@ -270,6 +270,7 @@ h6.mastery {
   padding: 0;
   display: block;
   background: #e1e1e1;
+  width: 100px;
 }
 span.mastery {
   display: block;
