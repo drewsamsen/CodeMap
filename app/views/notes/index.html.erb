@@ -21,8 +21,13 @@
   <%= submit_tag "Filter", :name => nil %>
 <% end %>
 
-<ul class="notes_list">
+<table class="notes_list">
+  <tr>
+    <th><%= sortable "subject" %></th>
+    <th><%= sortable "urgency" %></th>
+    <th><%= sortable "technology_id", "Technology" %></th>
+  </tr>
   <%= render @notes %>
-</ul>
+</table>
 
 

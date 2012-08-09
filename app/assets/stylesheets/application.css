@@ -159,6 +159,9 @@ tr.code pre {
 }
 
 /* show note styling */
+.notes_list {
+  width: 100%;
+}
 .note_subject {
   border-bottom: 1px solid #e1e1e1;
   padding: 0 0 10px 0;
@@ -168,33 +171,18 @@ tr.code pre {
 }
 
 /* index styles */
-.notes_list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  clear: both;
+.notes_list a {
+  text-decoration: none;
 }
-  .notes_list li {
-    padding: 8px;
-    border-bottom: 1px solid #e1e1e1;
-    position: relative;
-  }
-    .notes_list li a {
-      text-decoration: none;
-    }
-    .notes_list a.technology {
-      font-size: 11px;
-      background: #dbe3eb;
-      color: #4b7399;
-      display: block;
-      text-align: center;
-      width: 110px;
-      line-height: 20px;
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      margin-top: -10px;
-    }
+.notes_list a.technology {
+  font-size: 11px;
+  background: #dbe3eb;
+  color: #4b7399;
+  display: block;
+  text-align: center;
+  width: 110px;
+  line-height: 20px;
+}
 .note_description {
   
 }

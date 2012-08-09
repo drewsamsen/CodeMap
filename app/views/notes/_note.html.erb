@@ -1,11 +1,13 @@
-<li>
-  <%= link_to trim(note.subject, 70), note, :class => "subject" %>
-  <% if note.importance && note.understanding %>
-    <span class="urgency">
-      Urgency Factor: <%= urgency(note.importance, note.understanding) %>/100</h5>
-    </span>
-  <% end %>
-
+<tr>
+  <td><%= link_to trim(note.subject, 70), note, :class => "subject" %></td>
+  <td>
+    <% if note.importance && note.understanding %>
+      <span class="urgency">
+        <%= urgency(note.importance, note.understanding) %></h5>
+      </span>
+    <% end %>
+  </td>
+  <td>
     <% if note.technology %>   
       <%= link_to note.technology.name, 
               root_path(:technology => note.technology.id), 
@@ -13,4 +15,5 @@
               :class => "technology",
               :title => "More #{note.technology.name} Notes" %>
     <% end %>
-</li>
+  </td>
+</tr>

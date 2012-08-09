@@ -15,18 +15,22 @@ class Note < ActiveRecord::Base
 
   def self.search(params)
     # this class method is used for the notes#index action
-    # FIRST we check to see if the user has used the search form
-    if params[:search]
+    # FIRST we check to see if the columns are being sorted
+    if params[:sort]
+      @notes = Note.order(params[:sort] + " " + params[:direction])
+
+    # SECOND: we check to see if the user has used the search form
+    elsif params[:search]
       @notes = Note.where("subject like ?", "%#{params[:search]}%")
 
-    # SECOND: if not, see if they're trying to filter notes by technology
+    # THIRD: if not, see if they're trying to filter notes by technology
     elsif params[:note] || params[:technology]
       tech_id = params[:note] ? params[:note][:technology_id] : params[:technology]
       @notes = Note.where("technology_id = ?", tech_id) 
 
-    # THIRD: if they're not searching, return a normal collection of notes
+    # LAST: if they're not searching, return a normal collection of notes
     else
-      @notes = Note.find(:all, :include => :technology)
+      @notes = Note.find(:all, :include => :technology, :order => "created_at DESC")
     end
   end 
 
