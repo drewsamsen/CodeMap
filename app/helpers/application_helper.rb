@@ -1,4 +1,6 @@
 module ApplicationHelper
+
+  # used to trim the length of the subject on the home page
   def trim(string, length)
     truncate(string, :length => length, :omission => '... ', :separator => ' ')
   end
@@ -8,9 +10,11 @@ module ApplicationHelper
     content_for :title do @title || "CodeMap" end
   end
 
+  # used in the view to create a link_to which sends the correct params to do a 
+  # sorted table, like on the note's index page
   def sortable(column, title = nil)
   	title ||= column.titleize
-  	direction = column == params[:sort] && params[:direction] == "asc" ? "desc" : "asc"
+  	direction = column == sort_column && sort_direction == "asc" ? "desc" : "asc"
   	link_to title, {:sort => column, :direction => direction},
   				   {:title => "Sort by #{title}"}
   end
