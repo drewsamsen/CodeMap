@@ -2,9 +2,9 @@
   <td><%= link_to trim(note.subject, 70), note, :class => "subject" %></td>
   <td>
     <% if note.mastery %>
-      <span class="mastery">
-        <%= note.mastery %></h5>
-      </span>
+      <h6 class="mastery" style="width:<%= mastery_bar_width_max(note) %>px;">
+        <span class="mastery" style="width:<%= mastery_bar_width(note) %>px;">&nbsp;</span>
+      </h6>
     <% end %>
   </td>
   <td>

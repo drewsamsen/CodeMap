@@ -62,6 +62,9 @@
   <% if @note.mastery %>
     <div class="section">
       <h5>Mastery <%= @note.mastery %></h5>
+      <h6 class="mastery" style="width:<%= mastery_bar_width_max(@note) %>px;">
+        <span class="mastery" style="width:<%= mastery_bar_width(@note) %>px;">&nbsp;</span>
+      </h6>
     </div>
   <% end %>
  

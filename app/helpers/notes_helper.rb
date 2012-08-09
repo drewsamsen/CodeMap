@@ -38,4 +38,12 @@ module NotesHelper
     end
     doc.to_s
   end
+
+  def mastery_bar_width_max(note)
+    (note.importance + 3) * 10
+  end
+
+  def mastery_bar_width(note)
+    mastery_bar_width_max(note) * note.understanding / 5
+  end
 end

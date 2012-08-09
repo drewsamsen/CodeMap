@@ -265,3 +265,13 @@ tr.code pre {
   #sidebar .section .importance_value, #sidebar .section .understanding_value {
     background: #e1e1e1;
   }
+h6.mastery {
+  margin: 0;
+  padding: 0;
+  display: block;
+  background: #e1e1e1;
+}
+span.mastery {
+  display: block;
+  background: url('mastery-bg.jpg'); 
+}
