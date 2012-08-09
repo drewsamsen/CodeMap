@@ -8,6 +8,8 @@ class Note < ActiveRecord::Base
       update_mastery(note)
     end
   end
+
+  attr_accessible :subject, :description, :understanding, :importance, :mastery, :resources, :technology_name
  
   # virtual attribute to help get the technology name 
   def technology_name
