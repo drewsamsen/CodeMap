@@ -2,6 +2,12 @@ class Note < ActiveRecord::Base
   belongs_to :technology, :counter_cache => true
 
   validates :subject, :presence => true
+
+  before_save do |note| 
+    if note.importance && note.understanding
+      update_mastery(note)
+    end
+  end
  
   # virtual attribute to help get the technology name 
   def technology_name
@@ -34,4 +40,17 @@ class Note < ActiveRecord::Base
     end
   end 
 
+  def update_mastery(note)
+    note.mastery = set_mastery(note.importance, note.understanding)
+  end
+
+  # mastery is a virtual attribute that is a measure of how urgently I should
+  # think about learning more about a given note. Notes with high importance and
+  # low understanding will have an mastery closer to zero.
+  def set_mastery(importance, understanding)
+    # set up my constants
+    importance_factor = 2
+    # return result
+    103 - (importance * importance_factor) * (6 - understanding) * 2
+  end
 end

@@ -38,23 +38,4 @@ module NotesHelper
     end
     doc.to_s
   end
-
-  # urgency is a virtual attribute that is a measure of how urgently I should
-  # think about learning more about a given note. Notes with high importance and
-  # low understanding will have an urgency closer to 100.
-  def urgency(importance, understanding)
-    # set up my constants
-    importance_factor = 0.5
-    understanding_factor = 2
-    scaler = 12.5
-
-    importance_component = log(importance + importance_factor) * scaler
-    understanding_component = log((6 - understanding) + understanding_factor) * scaler
-    # result is the two multiplied
-    (importance_component * understanding_component).floor
-  end
-
-  def log(number)
-    Math.log10(number)
-  end
 end

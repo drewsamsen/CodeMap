@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120721212357) do
+ActiveRecord::Schema.define(:version => 20120809172912) do
 
   create_table "notes", :force => true do |t|
     t.string   "subject"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20120721212357) do
     t.text     "resources"
     t.integer  "importance"
     t.integer  "understanding"
+    t.integer  "mastery"
   end
 
   create_table "technologies", :force => true do |t|
