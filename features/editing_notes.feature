@@ -23,3 +23,12 @@ Feature: Editing notes
     And I fill in "note_subject" with ""
     When I press "Update Note"
     Then I should see "Note has not been updated."
+
+  Scenario: Updating the mastery level of a note
+    And I fill in "note_subject" with "Ruby Object structure"
+    And I choose "note_importance_5"
+    And I choose "note_understanding_5"
+    And I press "Update Note"
+    Then I should see "Note has been updated"
+    And I should see "100" in element ".mastery_value"
+
