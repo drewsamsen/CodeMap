@@ -11,3 +11,10 @@ Given /^the note "(.*?)" has the technology "(.*?)"$/ do |note, tech|
   @note.technology = Technology.find_or_create_by_name(tech)
   @note.save
 end
+
+# Used for sorting_notes.feature
+Then /^I should see the notes in this order:$/ do |table|
+	expected_order = table.raw.flatten!
+	actual_order = page.all('a.subject').collect(&:text)
+	expected_order.should == actual_order
+end
